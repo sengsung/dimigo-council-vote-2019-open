@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input id="input-password" type="password">
+    <button onclick="test()">테스트</button>
+    <br>
+    <span id="text-test">테스트 페이지</span>
+  </div>
+  <div>
+    <button onclick="start()">시작</button>
+    <button onclick="stop()">정지</button>
+    <br>
+    <input id="num" type="text">
+    <button onclick="apply()">수정</button>
+    <button onclick="change()">점수판적용</button>
+    <br>
+    <button onclick="refresh()">새로고침</button>
+  </div>
+  <div>
+    <button onclick="showMain()">띄우기</button>
+    <button onclick="hideMain()">숨기기</button>
+  </div>
+  <hr>
+  <div>
+    <button onclick="get()">조회</button>
+    <br>
+    <input id="nums" type="text">
+    <button onclick="remove()">기록 삭제</button>
+  </div>
+  <span>응답 결과 : </span>
+  <span id="result">:D</span>
+</body>
+<script>
+  var socket = io.connect();
+
+  function test() {
+    console.log(key());
+    socket.emit('test', key());
+  }
+  function start() {
+    socket.emit('start', key());
+  }
+  function stop() {
+    socket.emit('stop', key());
+  }
+  function apply() {
+    var lid = $('#num').val();
+    socket.emit('list', { key: key(), lid });
+  }
+  function refresh() {
+    socket.emit('refresh', key());
+  }
+  function showMain() {
+    socket.emit('showMain', key());
+  }
+  function hideMain() {
+    socket.emit('hideMain', key());
+  }
+  function change() {
+    socket.emit('scoreChange', key());
+  }
+  function get() {
+    $.ajax({
+      type: 'get',
+      url: `/manage/list`,
+      headers: {
+        Authorization: { key: key() }
+      }
+    }).then(result => {
+      $('#result').text(JSON.stringify(result));
+    });
+  }
+  function remove() {
+    var lid = $('#nums').val();
+    $.ajax({
+      type: 'delete',
+      url: `/manage/history/${lid}`,
+      headers: {
+        authorization: { key: key() }
+      }
+    }).then(result => {
+      $('#result').text(JSON.stringify(result));
+    });
+  }
+
+  function key() {
+    return $('#input-password').val();
+  }
+  socket.on('result', data => {
+    document.getElementById('result').textContent = JSON.stringify(data);
+  });
+</script>
+</html>

@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  margin: auto 0;
+  padding : 0rem 2rem 0rem 2rem;
+
+  min-width: 15rem;
+  max-width: 22rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 13rem;
+
+  margin-bottom: 2rem;
+}
+
+.line {
+  border-top: 1.5px solid white;
+  width: 6rem;
+  margin-bottom: 1rem;
+}
+
+.phrase {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.login-form, .login-form-hash {
+  display: flex;
+  width: 100%;
+
+  flex: 1;
+  flex-direction: column;
+
+  margin-top: 2rem;
+}
+
+.login-form-hash {
+  display: none;
+}
+
+.login-form__input {
+  background-color: #14161c;
+  color: white;
+  outline: none;
+
+  padding: 1rem 1rem;
+  font-size: 1rem;
+
+  border: none;
+  border-radius: 15px;
+
+  margin-bottom: 0.7rem;
+}
+
+.login-form__input::placeholder {
+  font-size: 1rem;
+}
+
+.login-form__student-id {
+  cursor: pointer;
+
+  background: none;
+  border: none;
+  margin-top: 0.4rem;
+
+  color: white;
+  opacity: 0.4;
+}
+
+.login-form__submit {
+  cursor: pointer;
+  outline: none;
+
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 15px;
+
+  margin: 1.5rem 0;
+
+  color: white;
+  background-image: linear-gradient(to right, #f964ca 0%, #a769f8 100%);
+}

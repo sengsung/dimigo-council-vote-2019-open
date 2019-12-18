@@ -1,0 +1,86 @@
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+
+  align-items: center;
+}
+
+.current-team {
+  color: white;
+  text-shadow: 0px 0px 20px violet;
+
+  margin-top: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.vote-button {
+  width: 15rem;
+}
+
+.vote-button--clicked {
+  opacity: 0.8;
+}
+
+.wait {
+  color: white;
+
+  opacity: 0;
+  margin: 0;
+  transition: all 0.5s;
+
+  font-size: 1rem;
+}
+
+.wait--visible {
+  transition: all 0.5s;
+
+  opacity: 0.8;
+  margin: 1rem 0 0.6rem 0;
+}
+
+.message {
+  margin: 0;
+
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.dimigo {
+  position: fixed;
+  top: calc(100vh - 3rem);
+  width: 10rem;
+}
+
+@media screen and (max-height: 570px) {
+  #app {
+    padding: 0;
+  }
+
+  .vote-button {
+    width: 13rem;
+  }
+
+  .wait--visible {
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .current-team {
+    margin-bottom: 1rem;
+  }
+
+  .dimigo {
+    visibility: hidden; 
+  }
+}

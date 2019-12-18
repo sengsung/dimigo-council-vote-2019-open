@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="rgb(38, 42, 54)">
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./js/jquery.cookie.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="./js/vote.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/vote.css">
+
+  <title>투표하기</title>
+</head>
+
+<body>
+  <main id="app">
+    <h1 class="current-team">(현재 팀 없음)</h1>
+    <img class="vote-button" src="assets/vote_normal.png" onclick="votes()">
+    <p class="wait">무대가 끝날 때까지 기다려주세요</p>
+    <p class="message">투표에 참여해주세요</p>
+    <img class="dimigo" src="assets/dimigo.png">
+  </main>
+</body>
+
+</html>

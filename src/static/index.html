@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="rgb(38, 42, 54)">
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/login.css">
+
+  <title>로그인</title>
+</head>
+
+<body>
+  <main id="app">
+    <img class="logo" src="assets/logo.png" />
+    <span class="line"></span>
+    <span class="phrase">Let it GO, Dimi GO</span>
+
+    <form class="login-form">
+      <input class="login-form__input login-form__id" type="id" placeholder="디미고 계정 아이디" />
+      <input class="login-form__input login-form__password" type="password" placeholder="디미고 계정 비밀번호" />
+      <input class="login-form__student-id" type="button" value="개인 식별 코드로 로그인" onclick="switchHash()"/>
+
+      <input class="login-form__submit" type="submit" value="Login" />
+    </form>
+
+    <form class="login-form-hash">
+      <input id="hash" class="login-form__input login-form__hash" type="text" placeholder="개인 식별 코드" />
+      <input class="login-form__student-id" type="button" value="디미고 아이디로 로그인" onclick="switchId()" />
+
+      <input class="login-form__submit" type="submit" value="Login" />
+    </form>
+  </main>
+</body>
+
+</html>

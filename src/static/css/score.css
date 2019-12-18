@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee&display=swap');
+
+body {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-team {
+  width: 25rem;
+}
+
+.current-score {
+  font-size: 8rem;
+  font-family: 'Bungee', cursive;
+
+  margin: 0;
+  color: white;
+}
+
+.current-score--update {
+  transform: translateY(-8.3rem);
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+.new-score {
+  opacity: 0;
+  transform: translateY(-12rem);
+
+  font-size: 8rem;
+  font-family: 'Bungee', cursive;
+
+  margin: 0;
+  color: white;
+}
+
+.new-score--update {
+  opacity: 1;
+  transform: translateY(-20.3rem);
+  transition: all 0.5s;
+}
+
+.dimigo {
+  position: absolute;
+  width: 12rem;
+  top: calc(100vh - 3rem);
+  left: 2rem;
+}
+
+#imgMain {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: black;
+}
+
+#imgMain img {
+  position: fixed;
+  height: 100vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}

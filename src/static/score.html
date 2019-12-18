@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="rgb(38, 42, 54)">
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./js/jquery.cookie.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="./js/score.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/score.css">
+
+  <title>현재 투표 현황</title>
+</head>
+
+<body>
+  <main id="app">
+    <img class="current-team" src="./assets/team/unknown.png">
+    <p class="current-score">0</p>
+    <p class="new-score">0</p>
+    <img class="dimigo" src="./assets/dimigo.png">
+  </main>
+  <div id="imgMain" class="visible">
+    <img src="./assets/main.jpg">
+  </div>
+</body>
+
+</html>
